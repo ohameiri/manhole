@@ -200,7 +200,7 @@ export function EntityRenderer({ entity }: Props) {
             dominantBaseline="alphabetic"
             fontFamily="Arial, sans-serif"
           >
-            {cleanText.split('\n').map((line, i) => (
+            {cleanText.split('\n').map((line: string, i: number) => (
               <tspan key={i} x={entity.position.x} dy={i === 0 ? 0 : h}>
                 {line}
               </tspan>

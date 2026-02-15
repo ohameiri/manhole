@@ -1,10 +1,6 @@
 import { useState, useCallback, useRef, type WheelEvent, type MouseEvent } from 'react';
 import type { BoundingBox } from '../types/dxf';
 
-interface ViewerState {
-  viewBox: { x: number; y: number; w: number; h: number };
-  isPanning: boolean;
-}
 
 export function useDxfViewer(bbox: BoundingBox | null) {
   const defaultVB = bbox

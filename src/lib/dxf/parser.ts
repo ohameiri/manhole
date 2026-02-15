@@ -1,4 +1,4 @@
-import Helper from 'dxf';
+import { Helper } from 'dxf';
 import type { ParsedDxf, DenormalizedEntity } from '../../types/dxf';
 
 export interface ParseResult {
@@ -10,8 +10,8 @@ export interface ParseResult {
 export function parseDxfText(text: string): ParseResult {
   const helper = new Helper(text);
 
-  const parsed = helper.parsed as ParsedDxf;
-  const entities = (helper.denormalised || []) as DenormalizedEntity[];
+  const parsed = helper.parsed as unknown as ParsedDxf;
+  const entities = (helper.denormalised || []) as unknown as DenormalizedEntity[];
 
   // Extract unique layer names
   const layerSet = new Set<string>();

@@ -78,7 +78,7 @@ function determinePipeDirection(
 export function analyzePipes(
   detectedPipes: DetectedPipe[],
   labels: TextLabel[],
-  manholeCenter: { x: number; y: number }
+  _manholeCenter: { x: number; y: number }
 ): PipeEntry[] {
   const entries: PipeEntry[] = [];
 
