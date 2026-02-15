@@ -25,7 +25,10 @@ function App() {
       setManholeProfile(profile);
 
       const manhole = detectManhole(entities);
-      if (!manhole) return;
+      if (!manhole) {
+        setError('Could not re-detect manhole geometry after analysis.');
+        return;
+      }
 
       const result = generateDimensions(profile, manhole.center, manhole.outerRadius);
       setDimensionResult(result);
